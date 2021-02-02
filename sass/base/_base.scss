@@ -1,17 +1,6 @@
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+$cd-btn: #011c37;
+$cd-txt: #15DEA5;
 
-html {
-    // 10px div by def of 16px
-    font-size: 62.5%;
-}
-
-body {
-    box-sizing: border-box;
-    background: $colour-secondary;
+.page {
+    background-color: black;
 }

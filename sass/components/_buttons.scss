@@ -1,3 +1,31 @@
 .btn {
-    @include btn
+    background: $cd-btn;
+    color: $cd-txt;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1.85rem 3rem;
+    border-radius: 10rem;
+    transform: scale(0.4);
+    transition: transform 1500ms;
+    &:hover {
+        transform: scale(1);
+    }
+}
+
+.bouton_allumage {
+    text-align: center;
+    border: 3px solid white;
+    width: 300px;
+    height: 100px;
+    padding-top: 50px;
+    &:active {
+        background-color: yellow;
+    }
+    & button {
+       height: 30px;
+    }
+}
+
+.formulaire:focus {
+    background-color: yellow;
 }
