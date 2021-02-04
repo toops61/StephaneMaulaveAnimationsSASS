@@ -5,21 +5,30 @@
     cursor: pointer;
     padding: 1.85rem 3rem;
     border-radius: 10rem;
-    transform: scale(0.4);
-    transition: transform 1500ms;
-    &:hover {
-        transform: scale(1);
+    &:hover + .ball {
+        transform: scale(1.5);
     }
 }
 
+.ball {
+    width: $ball-size;
+    height: $ball-size;
+    background: $cd-boule;
+    margin-bottom: 1rem;
+    border-radius: $ball-size * 0.5;
+    transform: scale(0.2);
+    transition: transform 6s;
+} 
+
 .bouton_allumage {
+    background-color: black;
     text-align: center;
     border: 3px solid white;
     width: 300px;
     height: 100px;
     padding-top: 50px;
     &:active {
-        background-color: yellow;
+        background-color: red;
     }
     & button {
        height: 30px;
@@ -28,4 +37,28 @@
 
 .formulaire:focus {
     background-color: yellow;
+}
+
+.form {
+    &__group {
+        & input, & label {
+        border: 2px solid white;
+        border-radius: 100rem;
+        color: $cd-titre;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem;
+        outline: none;
+        padding: .5rem 1.5rem;
+        width: 80%;
+        transition: background-color 500ms;
+        &:focus {
+            border: 2px solid $cd-titre;
+            }
+        &:not(:focus):invalid {
+            background: $cd-danger;
+            border: 2px solid $cd-danger;
+            color: $cd-txt--invalid;
+            }  
+        }
+    }
 }

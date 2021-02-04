@@ -1,5 +1,5 @@
 .page {
-  background-color: black;
+  margin: 20px;
 }
 
 .btn {
@@ -9,14 +9,23 @@
   cursor: pointer;
   padding: 1.85rem 3rem;
   border-radius: 10rem;
-  transform: scale(0.4);
-  transition: transform 1500ms;
 }
-.btn:hover {
-  transform: scale(1);
+.btn:hover + .ball {
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 200px;
+  height: 200px;
+  background: #ffc933;
+  margin-bottom: 1rem;
+  border-radius: 100px;
+  transform: scale(0.2);
+  transition: transform 6s;
 }
 
 .bouton_allumage {
+  background-color: black;
   text-align: center;
   border: 3px solid white;
   width: 300px;
@@ -24,7 +33,7 @@
   padding-top: 50px;
 }
 .bouton_allumage:active {
-  background-color: yellow;
+  background-color: red;
 }
 .bouton_allumage button {
   height: 30px;
@@ -32,6 +41,26 @@
 
 .formulaire:focus {
   background-color: yellow;
+}
+
+.form__group input, .form__group label {
+  border: 2px solid white;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  width: 80%;
+  transition: background-color 500ms;
+}
+.form__group input:focus, .form__group label:focus {
+  border: 2px solid #6300a0;
+}
+.form__group input:not(:focus):invalid, .form__group label:not(:focus):invalid {
+  background: #c70606;
+  border: 2px solid #c70606;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
