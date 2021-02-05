@@ -17,14 +17,33 @@
   background-color: #011c37;
 }
 
+.univers {
+  width: 600px;
+  height: 400px;
+  background-image: url(https://media1.ledevoir.com/images_galerie/nwd_484533_341674/image.jpg);
+}
+
 .ball {
   width: 200px;
   height: 200px;
   background: #ffc933;
-  margin-bottom: 1rem;
   border-radius: 100px;
-  transform: scale(0.2);
-  transition: transform 1s;
+  transform: scale(0.1);
+  transition: transform 2s, background-color 4s;
+}
+.ball p {
+  padding-top: 70px;
+  font-size: 2em;
+  text-align: center;
+  color: #ffc933;
+  transition: color 3s;
+}
+.ball p:hover {
+  color: black;
+}
+.ball:hover {
+  transform: scale(1);
+  background-color: red;
 }
 
 .bouton_allumage {
@@ -70,7 +89,7 @@ img {
   margin-left: 600px;
   filter: blur(60px);
   transform: scale(0.2);
-  transition: transform 3s, filter 250ms;
+  transition: transform 500ms ease-out, filter 250ms;
 }
 img:hover {
   transform: scale(1.4);

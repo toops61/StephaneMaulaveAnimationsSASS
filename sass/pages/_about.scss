@@ -2,7 +2,7 @@ img {
     margin-left: 600px;
     filter: blur(60px);
     transform: scale(0.2);
-    transition: transform 3s, filter 250ms;
+    transition: transform 500ms ease-out, filter 250ms;
     &:hover {
         transform: scale(1.4);
         filter: none;
