@@ -1,12 +1,15 @@
 .btn {
-    background: $cd-btn;
+    background-color: $cd-btn-start;
     color: $cd-txt;
     font-size: 3rem;
     cursor: pointer;
     padding: 1.85rem 3rem;
     border-radius: 10rem;
-    &:hover + .ball {
-        transform: scale(1.5);
+    transform: scale(0.2);
+    transition: all 600ms;
+    &:hover {
+        transform: scale(1);
+        background-color: $cd-btn-end;
     }
 }
 
@@ -17,7 +20,7 @@
     margin-bottom: 1rem;
     border-radius: $ball-size * 0.5;
     transform: scale(0.2);
-    transition: transform 6s;
+    transition: transform 1s;
 } 
 
 .bouton_allumage {

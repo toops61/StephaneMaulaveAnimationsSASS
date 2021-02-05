@@ -3,15 +3,18 @@
 }
 
 .btn {
-  background: #011c37;
+  background-color: rgba(1, 28, 55, 0);
   color: #15DEA5;
   font-size: 3rem;
   cursor: pointer;
   padding: 1.85rem 3rem;
   border-radius: 10rem;
+  transform: scale(0.2);
+  transition: all 600ms;
 }
-.btn:hover + .ball {
-  transform: scale(1.5);
+.btn:hover {
+  transform: scale(1);
+  background-color: #011c37;
 }
 
 .ball {
@@ -21,7 +24,7 @@
   margin-bottom: 1rem;
   border-radius: 100px;
   transform: scale(0.2);
-  transition: transform 6s;
+  transition: transform 1s;
 }
 
 .bouton_allumage {
@@ -61,6 +64,17 @@
   background: #c70606;
   border: 2px solid #c70606;
   color: #fff;
+}
+
+img {
+  margin-left: 600px;
+  filter: blur(60px);
+  transform: scale(0.2);
+  transition: transform 3s, filter 250ms;
+}
+img:hover {
+  transform: scale(1.4);
+  filter: none;
 }
 
 /*# sourceMappingURL=style.css.map */
