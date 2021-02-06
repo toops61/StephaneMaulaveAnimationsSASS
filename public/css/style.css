@@ -87,13 +87,13 @@
 
 img {
   margin-left: 600px;
-  filter: blur(60px);
+  filter: blur(60px) grayscale(100%);
   transform: scale(0.2);
-  transition: transform 500ms ease-out, filter 250ms;
+  transition: transform 500ms ease-out, filter 3s;
 }
 img:hover {
   transform: scale(1.4);
-  filter: none;
+  filter: blur(0px) grayscale(0%);
 }
 
 /*# sourceMappingURL=style.css.map */
