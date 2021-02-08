@@ -86,15 +86,16 @@
 }
 
 .boite{
-    background-color: yellow;
+    background: linear-gradient(45deg, rgb(255, 235, 145), rgb(218, 131, 0), rgb(230,100,0));
     width: 500px;
     height: 500px;
+    box-shadow: 8px 8px 8px black;
     z-index: 0;
     &--bg {
         height: 300px;
         width: 300px;
         margin: 100px 0 0 100px;
-        background-color: skyblue;
+        background-color: rgb(109, 45, 2);
         clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         position: absolute;
         z-index: 1;
