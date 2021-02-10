@@ -102,13 +102,29 @@
   z-index: 1;
 }
 
-img {
+.btn-suivant {
+  border-radius: 10px;
+}
+.btn-suivant:active + .silhouette-image {
+  transform: translateX(800%) rotate(2turn) scale(3);
+}
+
+.silhouette-image {
+  display: inline-block;
+  transform: translateX(0) rotate(0) scale(0.2);
+  transition: transform 800ms ease-in-out;
+}
+.silhouette-image img {
+  height: 180px;
+}
+
+.Mario_head {
   margin-left: 600px;
   filter: blur(60px) grayscale(100%);
   transform: scale(0.2);
   transition: transform 500ms ease-out, filter 3s;
 }
-img:hover {
+.Mario_head:hover {
   transform: scale(1.4);
   filter: blur(0px) grayscale(0%);
 }

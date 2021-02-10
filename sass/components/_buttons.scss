@@ -101,3 +101,19 @@
         z-index: 1;
     }
 }
+
+.btn-suivant {
+    border-radius: 10px;
+    &:active + .silhouette-image {
+        transform: translateX(800%) rotate(2turn) scale(3);
+    }
+}
+
+.silhouette-image {
+    & img {
+        height: 180px;
+    }
+    display: inline-block;
+    transform: translateX(0) rotate(0) scale(0.2);
+    transition: transform 800ms ease-in-out;
+}
