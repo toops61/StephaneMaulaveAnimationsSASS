@@ -102,20 +102,138 @@
   z-index: 1;
 }
 
-.btn-suivant {
+.btn-deplace {
   border-radius: 10px;
 }
-.btn-suivant:active + .silhouette-image {
-  transform: translateX(800%) rotate(2turn) scale(3);
+.btn-deplace:active + .silhouette-image {
+  transform: scale(3) translateX(200%) rotate(2turn);
 }
 
 .silhouette-image {
   display: inline-block;
-  transform: translateX(0) rotate(0) scale(0.2);
+  transform: scale(0.2) translateX(0) rotate(0);
   transition: transform 800ms ease-in-out;
 }
 .silhouette-image img {
   height: 180px;
+}
+
+.btn-couche {
+  border-radius: 10px;
+}
+.btn-couche:active + .seconde-silhouette-image {
+  transform: perspective(150px) rotateX(75deg);
+}
+
+.seconde-silhouette-image {
+  display: inline-block;
+  transition: transform 800ms ease-in-out;
+}
+.seconde-silhouette-image img {
+  height: 180px;
+}
+
+.btn-bouge {
+  border-radius: 10px;
+}
+.btn-bouge:active + .troisieme-silhouette-image {
+  transform: perspective(150px) translate3d(150%, -10%, 50px);
+}
+
+.troisieme-silhouette-image {
+  display: inline-block;
+  transition: transform 800ms ease-in-out;
+}
+.troisieme-silhouette-image img {
+  height: 180px;
+}
+
+.btn-chrgmt {
+  margin-left: 45%;
+  background-color: #15DEA5;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 20%;
+  height: 60px;
+  padding-top: 15px;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+.btn-chrgmt:active + .progress > .progress__bar {
+  transform: scaleX(1);
+}
+
+.progress {
+  border: solid #011c37;
+  height: 40px;
+  margin: 40px 80px;
+}
+.progress__bar {
+  background-color: #15DEA5;
+  height: 30px;
+  margin: 5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.05, 0.86, 0.43, 0.96);
+}
+
+.lightsaber .hilt {
+  cursor: pointer;
+  width: 15px;
+  height: 50px;
+  border-bottom: solid 4px grey;
+  border-top: solid 5px grey;
+  border-radius: 5px;
+  z-index: 1;
+  background: #e2e2e2;
+  background: linear-gradient(to right, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+}
+.lightsaber .hilt > .switch {
+  background: #b94a37;
+  width: 3px;
+  height: 10px;
+  position: absolute;
+  bottom: 25px;
+  left: 13px;
+  border-radius: 10px;
+}
+.lightsaber .hilt:active + .plasma {
+  transform: scale(1, 1);
+}
+.lightsaber .hilt:active > .switch {
+  transform: scale(0.7, 1);
+}
+
+.lightsaber .plasma {
+  transition: transform 300ms;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  bottom: 45px;
+  left: 2px;
+  width: 10px;
+  display: block;
+  transform: scale(1, 0);
+  height: 250px;
+  transform-origin: bottom center;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.vader {
+  z-index: 2;
+  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
+  box-shadow: 0 0 10px #e51115;
+}
+
+.lightsaber-example {
+  display: flex;
+  justify-content: center;
+  padding-top: 325px;
+}
+
+.lightsaber {
+  position: relative;
 }
 
 .Mario_head {
@@ -127,6 +245,11 @@
 .Mario_head:hover {
   transform: scale(1.4);
   filter: blur(0px) grayscale(0%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 /*# sourceMappingURL=style.css.map */
