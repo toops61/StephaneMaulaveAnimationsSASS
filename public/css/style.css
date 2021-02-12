@@ -151,6 +151,7 @@
 .btn-chrgmt {
   margin-left: 45%;
   background-color: #15DEA5;
+  transition: background-color 250ms;
   cursor: pointer;
   border-radius: 50px;
   width: 20%;
@@ -159,6 +160,23 @@
   font-size: 2em;
   text-align: center;
   color: white;
+  position: relative;
+  z-index: 1;
+}
+.btn-chrgmt:hover .btn-chrgmt__bg {
+  opacity: 1;
+}
+.btn-chrgmt__bg {
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #010f1e;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 .btn-chrgmt:active + .progress > .progress__bar {
   transform: scaleX(1);
@@ -176,6 +194,16 @@
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 1s cubic-bezier(0.05, 0.86, 0.43, 0.96);
+}
+
+.nuit {
+  position: absolute;
+  z-index: -3;
+  border: solid;
+  width: 80%;
+  height: 400px;
+  margin-top: -300px;
+  background-image: url(https://cdnfr1.img.sputniknews.com/img/104304/07/1043040732_0:0:1921:1039_1000x541_80_0_0_cb892e73419ee14e839cf3ed2f6f972d.jpg);
 }
 
 .lightsaber .hilt {
@@ -223,7 +251,7 @@
 .vader {
   z-index: 2;
   background: linear-gradient(to right, #07d623 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #07d623 100%);
-  box-shadow: 0 0 10px #11e546;
+  box-shadow: 0 -10px 10px 10px #11e546;
 }
 
 .lightsaber-example {
