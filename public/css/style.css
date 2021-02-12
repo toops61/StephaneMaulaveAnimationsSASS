@@ -222,8 +222,8 @@
 
 .vader {
   z-index: 2;
-  background: linear-gradient(to right, #e51115 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #e51115 100%);
-  box-shadow: 0 0 10px #e51115;
+  background: linear-gradient(to right, #07d623 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #07d623 100%);
+  box-shadow: 0 0 10px #11e546;
 }
 
 .lightsaber-example {
