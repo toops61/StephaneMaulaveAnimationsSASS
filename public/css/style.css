@@ -1,7 +1,10 @@
+@charset "UTF-8";
 .page {
   margin: 20px;
+  background-color: black;
 }
 
+/* "vois comme je grandis" bouton */
 .btn {
   background-color: rgba(1, 28, 55, 0);
   color: #15DEA5;
@@ -17,19 +20,21 @@
   background-color: #011c37;
 }
 
+/* univers */
 .univers {
-  width: 600px;
+  width: 100%;
   height: 400px;
   background-image: url(https://media1.ledevoir.com/images_galerie/nwd_484533_341674/image.jpg);
 }
 
 .ball {
+  filter: blur(30px);
   width: 200px;
   height: 200px;
   background: #ffc933;
   border-radius: 100px;
   transform: scale(0.1);
-  transition: transform 2s, background-color 4s;
+  transition: transform 2s, background-color 4s, filter 2s;
 }
 .ball p {
   padding-top: 70px;
@@ -42,10 +47,12 @@
   color: black;
 }
 .ball:hover {
+  filter: blur(0);
   transform: scale(1);
   background-color: red;
 }
 
+/* pièce en rouge à allumer */
 .bouton_allumage {
   background-color: black;
   text-align: center;
@@ -61,6 +68,7 @@
   height: 30px;
 }
 
+/* formulaires */
 .formulaire:focus {
   background-color: yellow;
 }
@@ -85,23 +93,41 @@
   color: #fff;
 }
 
-.boite {
+/* pochette de disque avec étoile */
+.pochette {
+  position: relative;
+}
+.pochette .couverture {
+  position: absolute;
   background: linear-gradient(45deg, #ffeb91, #da8300, #e66400);
   width: 500px;
   height: 500px;
   box-shadow: 8px 8px 8px black;
   z-index: 0;
 }
-.boite--bg {
-  height: 300px;
-  width: 300px;
-  margin: 100px 0 0 100px;
+.pochette .couverture--etoile {
+  height: 60%;
+  width: 60%;
+  left: 20%;
+  top: 20%;
   background-color: #6d2d02;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   position: absolute;
   z-index: 1;
 }
+.pochette .couverture:hover + .disque {
+  transform: translate(220px, 0);
+}
+.pochette .disque {
+  z-index: -1;
+  position: relative;
+  transition: transform 700ms ease-in-out;
+}
+.pochette .disque img {
+  width: 500px;
+}
 
+/* premier bonhomme */
 .btn-deplace {
   border-radius: 10px;
 }
@@ -118,6 +144,7 @@
   height: 180px;
 }
 
+/* deuxième bonhomme */
 .btn-couche {
   border-radius: 10px;
 }
@@ -133,6 +160,7 @@
   height: 180px;
 }
 
+/* troisième bonhomme */
 .btn-bouge {
   border-radius: 10px;
 }
@@ -148,6 +176,7 @@
   height: 180px;
 }
 
+/* barre de chargement */
 .btn-chrgmt {
   margin-left: 45%;
   background-color: #15DEA5;
@@ -163,17 +192,18 @@
   position: relative;
   z-index: 1;
 }
-.btn-chrgmt:hover .btn-chrgmt__bg {
+.btn-chrgmt:hover::after {
   opacity: 1;
 }
-.btn-chrgmt__bg {
+.btn-chrgmt::after {
+  content: "";
   position: absolute;
   border-radius: 50px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #010f1e;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background: radial-gradient(circle, #012950 0%, #000305 100%);
   opacity: 0;
   z-index: -1;
   transition: opacity 250ms;
@@ -193,9 +223,10 @@
   margin: 5px;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform 1s cubic-bezier(0.05, 0.86, 0.43, 0.96);
+  transition: transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
 }
 
+/* star wars */
 .nuit {
   position: absolute;
   z-index: -3;
@@ -250,8 +281,8 @@
 
 .vader {
   z-index: 2;
-  background: linear-gradient(to right, #07d623 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #07d623 100%);
-  box-shadow: 0 -10px 10px 10px #11e546;
+  background: linear-gradient(to right, #d60707 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #d60707 100%);
+  box-shadow: 0 -10px 10px 10px #e51111;
 }
 
 .lightsaber-example {
@@ -275,6 +306,7 @@
   filter: blur(0px) grayscale(0%);
 }
 
+/* container starwars */
 .container {
   display: flex;
   flex-direction: column-reverse;

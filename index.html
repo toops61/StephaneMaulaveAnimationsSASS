@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/Sass_Logo_petit.png">      <!--pour mettre l'image dans l'onglet-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=599px, initial-scale=1.0">
     <title>animations CSS modernes</title>
 </head>
-<body class=page>
+<body class="page" onscroll="changeColor()">
         <div class="container">
             <div class="btn">
                 Vois comme je grandis !
@@ -42,8 +43,13 @@
                 </div>
             </div>
         </div>
-        <div class="boite">
-            <div class="boite--bg">
+        <div class="pochette">
+            <div class="couverture">
+                <div class="couverture--etoile">
+                </div>
+            </div>
+            <div class="disque">
+                <img src="public/img/vinyl.png" alt="vinyl">
             </div>
         </div>
         <div class="silhouette">
@@ -68,7 +74,7 @@
         </div>
         <br>
         <div class="container">
-            <div class="btn-chrgmt">Charger!<div class="btn-chrgmt__bg"></div></div>
+            <div class="btn-chrgmt">Charger!</div>
             <div class="progress">
                 <div class="progress__bar"></div>
             </div>
@@ -84,5 +90,6 @@
                 <div class="plasma vader"></div>
             </div>
         </div>
+        <script src="script.js"></script>
 </body>
 </html>

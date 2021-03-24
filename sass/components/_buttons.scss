@@ -1,3 +1,5 @@
+/* "vois comme je grandis" bouton */
+
 .btn {
     background-color: $cd-btn-start;
     color: $cd-txt;
@@ -13,19 +15,22 @@
     }
 }
 
+/* univers */
+
 .univers {
-    width: 600px;
+    width: 100%;
     height: 400px;
     background-image: url(https://media1.ledevoir.com/images_galerie/nwd_484533_341674/image.jpg);
 }
 
 .ball {
+    filter: blur(30px);
     width: $ball-size;
     height: $ball-size;
     background: $cd-boule;
     border-radius: $ball-size * 0.5;
     transform: scale(0.1);
-    transition: transform 2s, background-color 4s;
+    transition: transform 2s, background-color 4s, filter 2s;
     & p {
         padding-top: 70px;
         font-size: 2em;
@@ -37,10 +42,13 @@
         }
     }
     &:hover {
+        filter: blur(0);
         transform: scale(1);
         background-color: red;
     }
 } 
+
+/* pièce en rouge à allumer */
 
 .bouton_allumage {
     background-color: black;
@@ -56,6 +64,8 @@
        height: 30px;
     }
 }
+
+/* formulaires */
 
 .formulaire:focus {
     background-color: yellow;
@@ -85,22 +95,42 @@
     }
 }
 
-.boite{
-    background: linear-gradient(45deg, rgb(255, 235, 145), rgb(218, 131, 0), rgb(230,100,0));
-    width: 500px;
-    height: 500px;
-    box-shadow: 8px 8px 8px black;
-    z-index: 0;
-    &--bg {
-        height: 300px;
-        width: 300px;
-        margin: 100px 0 0 100px;
-        background-color: rgb(109, 45, 2);
-        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+/* pochette de disque avec étoile */
+
+.pochette {
+    position: relative;
+    .couverture {
         position: absolute;
-        z-index: 1;
+        background: linear-gradient(45deg, rgb(255, 235, 145), rgb(218, 131, 0), rgb(230,100,0));
+        width: 500px;
+        height: 500px;
+        box-shadow: 8px 8px 8px black;
+        z-index: 0;
+        &--etoile {
+            height: 60%;
+            width: 60%;
+            left: 20%;
+            top: 20%;
+            background-color: rgb(109, 45, 2);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            position: absolute;
+            z-index: 1;
+        }
+        &:hover + .disque {
+            transform: translate(220px, 0);
+        }
+    }
+    .disque {
+        z-index: -1;
+        position: relative;
+        transition: transform 700ms ease-in-out;
+        & img {
+            width: 500px;
+        }
     }
 }
+
+/* premier bonhomme */
 
 .btn-deplace {
     border-radius: 10px;
@@ -118,6 +148,8 @@
     transition: transform 800ms ease-in-out;
 }
 
+/* deuxième bonhomme */
+
 .btn-couche {
     border-radius: 10px;
     &:active + .seconde-silhouette-image {
@@ -132,6 +164,8 @@
     display: inline-block;
     transition: transform 800ms ease-in-out;
 }
+
+/* troisième bonhomme */
 
 .btn-bouge {
     border-radius: 10px;
@@ -148,12 +182,14 @@
     transition: transform 800ms ease-in-out;
 }
 
+/* barre de chargement */
+
 .btn-chrgmt {
     margin-left: 45%;
     background-color: $cd-txt;
     transition: background-color 250ms;
     cursor: pointer;
-    border-radius: 50px;
+    @include round-btn;
     width: 20%;
     height: 60px;
     padding-top: 15px;
@@ -163,18 +199,19 @@
     position: relative;
     z-index: 1;
     &:hover {
-        & .btn-chrgmt__bg {
+        &::after {
             opacity: 1;
         }
     }
-    &__bg {
+    &::after {
+        content: "";
         position: absolute;
-        border-radius: 50px;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: darken($cd-btn, 5);
+        @include round-btn;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        background: radial-gradient(circle, lighten($cd-btn, 5) 0%, darken($cd-btn, 10) 100%);
         opacity: 0;
         z-index: -1;
         transition: opacity 250ms;
@@ -198,9 +235,11 @@
         margin: 5px;
         transform-origin: left;
         transform: scaleX(0);
-        transition: transform 1s cubic-bezier(.05,.86,.43,.96);
+        transition: transform 10s cubic-bezier(.53,.77,.57,.35);
     }
 }
+
+/* star wars */
 
 //background black in a box instead of the body selector
 .nuit {
@@ -271,13 +310,13 @@
     z-index: 2;
 	background: linear-gradient(
 		to right,
-		rgb(7, 214, 35) 0%,
+		rgb(214, 7, 7) 0%,
 		rgba(254, 254, 254, 1) 30%,
 		rgba(254, 254, 254, 1) 47%,
 		rgba(254, 254, 254, 1) 71%,
-		rgb(7, 214, 35) 100%
+		rgb(214, 7, 7) 100%
 	);
-	box-shadow: 0 -10px 10px 10px #11e546;
+	box-shadow: 0 -10px 10px 10px #e51111;
 }
 
 .lightsaber-example {
