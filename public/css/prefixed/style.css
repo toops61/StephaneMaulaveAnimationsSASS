@@ -1,0 +1,414 @@
+@charset "UTF-8";
+.page {
+  margin: 20px;
+  background-color: black;
+}
+
+/* "vois comme je grandis" bouton */
+.btn {
+  background-color: rgba(1, 28, 55, 0);
+  color: #15DEA5;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+  -webkit-transform: scale(0.2);
+      -ms-transform: scale(0.2);
+          transform: scale(0.2);
+  -webkit-transition: all 600ms;
+  -o-transition: all 600ms;
+  transition: all 600ms;
+}
+.btn:hover {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  background-color: #011c37;
+}
+
+/* univers */
+.univers {
+  width: 100%;
+  height: 400px;
+  background-image: url(https://media1.ledevoir.com/images_galerie/nwd_484533_341674/image.jpg);
+}
+
+.ball {
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  width: 200px;
+  height: 200px;
+  background: #ffc933;
+  border-radius: 100px;
+  -webkit-transform: scale(0.1);
+      -ms-transform: scale(0.1);
+          transform: scale(0.1);
+  -webkit-transition: background-color 4s, -webkit-transform 2s, -webkit-filter 2s;
+  transition: background-color 4s, -webkit-transform 2s, -webkit-filter 2s;
+  -o-transition: transform 2s, background-color 4s, filter 2s;
+  transition: transform 2s, background-color 4s, filter 2s;
+  transition: transform 2s, background-color 4s, filter 2s, -webkit-transform 2s, -webkit-filter 2s;
+}
+.ball p {
+  padding-top: 70px;
+  font-size: 2em;
+  text-align: center;
+  color: #ffc933;
+  -webkit-transition: color 3s;
+  -o-transition: color 3s;
+  transition: color 3s;
+}
+.ball p:hover {
+  color: black;
+}
+.ball:hover {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  background-color: red;
+}
+
+/* pièce en rouge à allumer */
+.bouton_allumage {
+  background-color: black;
+  text-align: center;
+  border: 3px solid white;
+  width: 300px;
+  height: 100px;
+  padding-top: 50px;
+}
+.bouton_allumage:active {
+  background-color: red;
+}
+.bouton_allumage button {
+  height: 30px;
+}
+
+/* formulaires */
+.formulaire:focus {
+  background-color: yellow;
+}
+
+.form__group input, .form__group label {
+  border: 2px solid white;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  width: 80%;
+  -webkit-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+.form__group input:focus, .form__group label:focus {
+  border: 2px solid #6300a0;
+}
+.form__group input:not(:focus):invalid, .form__group label:not(:focus):invalid {
+  background: #c70606;
+  border: 2px solid #c70606;
+  color: #fff;
+}
+
+/* pochette de disque avec étoile */
+.pochette {
+  position: relative;
+}
+.pochette .couverture {
+  position: absolute;
+  background: -o-linear-gradient(45deg, #ffeb91, #da8300, #e66400);
+  background: linear-gradient(45deg, #ffeb91, #da8300, #e66400);
+  width: 500px;
+  height: 500px;
+  -webkit-box-shadow: 8px 8px 8px black;
+          box-shadow: 8px 8px 8px black;
+  z-index: 0;
+}
+.pochette .couverture--etoile {
+  height: 60%;
+  width: 60%;
+  left: 20%;
+  top: 20%;
+  background-color: #6d2d02;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  position: absolute;
+  z-index: 1;
+}
+.pochette .couverture:hover + .disque {
+  -webkit-transform: translate(220px, 0);
+      -ms-transform: translate(220px, 0);
+          transform: translate(220px, 0);
+}
+.pochette .disque {
+  z-index: -1;
+  position: relative;
+  -webkit-transition: -webkit-transform 700ms ease-in-out;
+  transition: -webkit-transform 700ms ease-in-out;
+  -o-transition: transform 700ms ease-in-out;
+  transition: transform 700ms ease-in-out;
+  transition: transform 700ms ease-in-out, -webkit-transform 700ms ease-in-out;
+}
+.pochette .disque img {
+  width: 500px;
+}
+
+/* premier bonhomme */
+.btn-deplace {
+  border-radius: 10px;
+}
+.btn-deplace:active + .silhouette-image {
+  -webkit-transform: scale(3) translateX(200%) rotate(2turn);
+      -ms-transform: scale(3) translateX(200%) rotate(2turn);
+          transform: scale(3) translateX(200%) rotate(2turn);
+}
+
+.silhouette-image {
+  display: inline-block;
+  -webkit-transform: scale(0.2) translateX(0) rotate(0);
+      -ms-transform: scale(0.2) translateX(0) rotate(0);
+          transform: scale(0.2) translateX(0) rotate(0);
+  -webkit-transition: -webkit-transform 800ms ease-in-out;
+  transition: -webkit-transform 800ms ease-in-out;
+  -o-transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out, -webkit-transform 800ms ease-in-out;
+}
+.silhouette-image img {
+  height: 180px;
+}
+
+/* deuxième bonhomme */
+.btn-couche {
+  border-radius: 10px;
+}
+.btn-couche:active + .seconde-silhouette-image {
+  -webkit-transform: perspective(150px) rotateX(75deg);
+          transform: perspective(150px) rotateX(75deg);
+}
+
+.seconde-silhouette-image {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 800ms ease-in-out;
+  transition: -webkit-transform 800ms ease-in-out;
+  -o-transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out, -webkit-transform 800ms ease-in-out;
+}
+.seconde-silhouette-image img {
+  height: 180px;
+}
+
+/* troisième bonhomme */
+.btn-bouge {
+  border-radius: 10px;
+}
+.btn-bouge:active + .troisieme-silhouette-image {
+  -webkit-transform: perspective(150px) translate3d(150%, -10%, 50px);
+          transform: perspective(150px) translate3d(150%, -10%, 50px);
+}
+
+.troisieme-silhouette-image {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 800ms ease-in-out;
+  transition: -webkit-transform 800ms ease-in-out;
+  -o-transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out;
+  transition: transform 800ms ease-in-out, -webkit-transform 800ms ease-in-out;
+}
+.troisieme-silhouette-image img {
+  height: 180px;
+}
+
+/* barre de chargement */
+.btn-chrgmt {
+  margin-left: 45%;
+  background-color: #15DEA5;
+  -webkit-transition: background-color 250ms;
+  -o-transition: background-color 250ms;
+  transition: background-color 250ms;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 20%;
+  height: 60px;
+  padding-top: 15px;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.btn-chrgmt:hover::after {
+  opacity: 1;
+}
+.btn-chrgmt::after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background: -o-radial-gradient(circle, #012950 0%, #000305 100%);
+  background: radial-gradient(circle, #012950 0%, #000305 100%);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+.btn-chrgmt:active + .progress > .progress__bar {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.progress {
+  border: solid #011c37;
+  height: 40px;
+  margin: 40px 80px;
+}
+.progress__bar {
+  background-color: #15DEA5;
+  height: 30px;
+  margin: 5px;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
+  transition: -webkit-transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
+  -o-transition: transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
+  transition: transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
+  transition: transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35), -webkit-transform 10s cubic-bezier(0.53, 0.77, 0.57, 0.35);
+}
+
+/* star wars */
+.nuit {
+  position: absolute;
+  z-index: -3;
+  border: solid;
+  width: 80%;
+  height: 400px;
+  margin-top: -300px;
+  background-image: url(https://cdnfr1.img.sputniknews.com/img/104304/07/1043040732_0:0:1921:1039_1000x541_80_0_0_cb892e73419ee14e839cf3ed2f6f972d.jpg);
+}
+
+.lightsaber .hilt {
+  cursor: pointer;
+  width: 15px;
+  height: 50px;
+  border-bottom: solid 4px grey;
+  border-top: solid 5px grey;
+  border-radius: 5px;
+  z-index: 1;
+  background: #e2e2e2;
+  background: -webkit-gradient(linear, left top, right top, from(#e2e2e2), color-stop(50%, #dbdbdb), color-stop(51%, #d1d1d1), to(#fefefe));
+  background: -o-linear-gradient(left, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  background: linear-gradient(to right, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+}
+.lightsaber .hilt > .switch {
+  background: #b94a37;
+  width: 3px;
+  height: 10px;
+  position: absolute;
+  bottom: 25px;
+  left: 13px;
+  border-radius: 10px;
+}
+.lightsaber .hilt:active + .plasma {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.lightsaber .hilt:active > .switch {
+  -webkit-transform: scale(0.7, 1);
+      -ms-transform: scale(0.7, 1);
+          transform: scale(0.7, 1);
+}
+
+.lightsaber .plasma {
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  bottom: 45px;
+  left: 2px;
+  width: 10px;
+  display: block;
+  -webkit-transform: scale(1, 0);
+      -ms-transform: scale(1, 0);
+          transform: scale(1, 0);
+  height: 250px;
+  -webkit-transform-origin: bottom center;
+      -ms-transform-origin: bottom center;
+          transform-origin: bottom center;
+  z-index: -1;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.vader {
+  z-index: 2;
+  background: -webkit-gradient(linear, left top, right top, from(#d60707), color-stop(30%, #fefefe), color-stop(47%, #fefefe), color-stop(71%, #fefefe), to(#d60707));
+  background: -o-linear-gradient(left, #d60707 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #d60707 100%);
+  background: linear-gradient(to right, #d60707 0%, #fefefe 30%, #fefefe 47%, #fefefe 71%, #d60707 100%);
+  -webkit-box-shadow: 0 -10px 10px 10px #e51111;
+          box-shadow: 0 -10px 10px 10px #e51111;
+}
+
+.lightsaber-example {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 325px;
+}
+
+.lightsaber {
+  position: relative;
+}
+
+.Mario_head {
+  margin-left: 600px;
+  -webkit-filter: blur(60px) grayscale(100%);
+          filter: blur(60px) grayscale(100%);
+  -webkit-transform: scale(0.2);
+      -ms-transform: scale(0.2);
+          transform: scale(0.2);
+  -webkit-transition: -webkit-transform 500ms ease-out, -webkit-filter 3s;
+  transition: -webkit-transform 500ms ease-out, -webkit-filter 3s;
+  -o-transition: transform 500ms ease-out, filter 3s;
+  transition: transform 500ms ease-out, filter 3s;
+  transition: transform 500ms ease-out, filter 3s, -webkit-transform 500ms ease-out, -webkit-filter 3s;
+}
+.Mario_head:hover {
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-filter: blur(0px) grayscale(0%);
+          filter: blur(0px) grayscale(0%);
+}
+
+/* container starwars */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3N0eWxlLmNzcyIsIi4uLy4uLy4uL3Nhc3MvYmFzZS9fYmFzZS5zY3NzIiwiLi4vLi4vLi4vc2Fzcy9jb21wb25lbnRzL19idXR0b25zLnNjc3MiLCIuLi8uLi8uLi9zYXNzL3V0aWxzL19taXhpbnMuc2NzcyIsIi4uLy4uLy4uL3Nhc3MvcGFnZXMvX2Fib3V0LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FDWWhCO0VBQ0ksWUFBQTtFQUNBLHVCQUFBO0FEVko7O0FFSkEsbUNBQUE7QUFFQTtFQUNJLG9DRElXO0VDSFgsY0RISztFQ0lMLGVBQUE7RUFDQSxlQUFBO0VBQ0EscUJBQUE7RUFDQSxvQkFBQTtFQUNBLDZCQUFBO01BQUEseUJBQUE7VUFBQSxxQkFBQTtFQUNBLDZCQUFBO0VBQUEsd0JBQUE7RUFBQSxxQkFBQTtBRk1KO0FFTEk7RUFDSSwyQkFBQTtNQUFBLHVCQUFBO1VBQUEsbUJBQUE7RUFDQSx5QkRMSztBRFliOztBRUhBLFlBQUE7QUFFQTtFQUNJLFdBQUE7RUFDQSxhQUFBO0VBQ0EsNkZBQUE7QUZLSjs7QUVGQTtFQUNJLDBCQUFBO1VBQUEsa0JBQUE7RUFDQSxZRGpCUTtFQ2tCUixhRGxCUTtFQ21CUixtQkR2Qk87RUN3QlAsb0JBQUE7RUFDQSw2QkFBQTtNQUFBLHlCQUFBO1VBQUEscUJBQUE7RUFDQSxnRkFBQTtFQUFBLHdFQUFBO0VBQUEsMkRBQUE7RUFBQSx3REFBQTtFQUFBLGlHQUFBO0FGS0o7QUVKSTtFQUNJLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0VBQ0EsY0QvQkc7RUNnQ0gsNEJBQUE7RUFBQSx1QkFBQTtFQUFBLG9CQUFBO0FGTVI7QUVMUTtFQUNJLFlBQUE7QUZPWjtBRUpJO0VBQ0ksdUJBQUE7VUFBQSxlQUFBO0VBQ0EsMkJBQUE7TUFBQSx1QkFBQTtVQUFBLG1CQUFBO0VBQ0EscUJBQUE7QUZNUjs7QUVGQSw2QkFBQTtBQUVBO0VBQ0ksdUJBQUE7RUFDQSxrQkFBQTtFQUNB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QUFBO0VBQUEsaUVBQUE7RUFBQSw4REFBQTtFQUFBLDBIQUFBO0FGWFI7O0FFZUEsY0FBQTtBQUdBO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0VBQ0EsYUFBQTtFQUNBLFVBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxxSkFBQTtBRmRKOztBRWtCQTtFQUNDLGVBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLDZCQUFBO0VBQ0EsMEJBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxtQkFBQTtFQUNBLHlJQUFBO0VBQUEsd0ZBQUE7RUFBQSx5RkFBQTtBRmZEO0FFd0JDO0VBQ0MsbUJBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLFVBQUE7RUFDQSxtQkFBQTtBRnRCRjtBRTBCQztFQUNDLDhCQUFBO01BQUEsMEJBQUE7VUFBQSxzQkFBQTtBRnhCRjtBRTJCQztFQUNDLGdDQUFBO01BQUEsNEJBQUE7VUFBQSx3QkFBQTtBRnpCRjs7QUU2QkE7RUFDQywyQ0FBQTtFQUFBLG1DQUFBO0VBQUEsOEJBQUE7RUFBQSwyQkFBQTtFQUFBLG9EQUFBO0VBQ0EsNEJBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSw4QkFBQTtNQUFBLDBCQUFBO1VBQUEsc0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUNBQUE7TUFBQSxtQ0FBQTtVQUFBLCtCQUFBO0VBQ0MsV0FBQTtFQUNELHlCQUFBO1VBQUEsaUJBQUE7QUYxQkQ7O0FFNkJBO0VBQ0ksVUFBQTtFQUNILG1LQUFBO0VBQUEscUdBQUE7RUFBQSxzR0FBQTtFQVFBLDZDQUFBO1VBQUEscUNBQUE7QUZqQ0Q7O0FFb0NBO0VBQ0Msb0JBQUE7RUFBQSxvQkFBQTtFQUFBLGFBQUE7RUFDQyx3QkFBQTtNQUFBLHFCQUFBO1VBQUEsdUJBQUE7RUFDRCxrQkFBQTtBRmpDRDs7QUVvQ0E7RUFDQyxrQkFBQTtBRmpDRDs7QUl2U0E7RUFDSSxrQkFBQTtFQUNBLDBDQUFBO1VBQUEsa0NBQUE7RUFDQSw2QkFBQTtNQUFBLHlCQUFBO1VBQUEscUJBQUE7RUFDQSx1RUFBQTtFQUFBLCtEQUFBO0VBQUEsa0RBQUE7RUFBQSwrQ0FBQTtFQUFBLG9HQUFBO0FKMFNKO0FJelNJO0VBQ0ksNkJBQUE7TUFBQSx5QkFBQTtVQUFBLHFCQUFBO0VBQ0EsdUNBQUE7VUFBQSwrQkFBQTtBSjJTUjs7QUl2U0EsdUJBQUE7QUFFQTtFQUNJLG9CQUFBO0VBQUEsb0JBQUE7RUFBQSxhQUFBO0VBQ0EsNEJBQUE7RUFBQSw4QkFBQTtNQUFBLGtDQUFBO1VBQUEsOEJBQUE7QUp5U0oiLCJmaWxlIjoic3R5bGUuY3NzIn0= */

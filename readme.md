@@ -1,18 +1,20 @@
 # Produce maintainable CSS stylesheets with SASS
 
-1 Base.
+1 Utils :   a. variables
+            b. fonctions
+            c. Mixins
+            d. Placeholders
+2 Feuilles de style de tiers (vendors)
 
-2 Utils.
+3 Base
 
-3 Layout (mise en page).
+4 Composants
 
-4 Composants.
+5 Layout
 
-5 Pages.
+6 Pages
 
-6 Themes.
-
-7 Vendors (tiers).
+7 Themes
 
 le directory base/ contient les fichiers qui définissent les fondations de votre site, par exemple la police de caractères et les normes que vous voulez appliquer sur tout votre site, telles que le box-sizing ;
 
