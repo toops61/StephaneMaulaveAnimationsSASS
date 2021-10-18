@@ -185,7 +185,7 @@
 /* barre de chargement */
 
 .btn-chrgmt {
-    margin-left: 45%;
+    margin: auto;
     background-color: $cd-txt;
     transition: background-color 250ms;
     cursor: pointer;
@@ -235,7 +235,7 @@
         margin: 5px;
         transform-origin: left;
         transform: scaleX(0);
-        transition: transform 10s cubic-bezier(.53,.77,.57,.35);
+        transition: transform 3s cubic-bezier(.53,.77,.57,.35);
     }
 }
 
